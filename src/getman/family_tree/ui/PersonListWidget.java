@@ -8,16 +8,12 @@ import getman.family_tree.model.RelativeLink;
 import getman.family_tree.model.Support.Age;
 import getman.family_tree.model.Support.Name;
 
-import java.awt.Button;
 import java.awt.GridBagConstraints;
-import java.awt.List;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
-import javax.swing.event.AncestorEvent;
-import javax.swing.event.AncestorListener;
 
 /**Represents panel with list of person 
  * @author getman
