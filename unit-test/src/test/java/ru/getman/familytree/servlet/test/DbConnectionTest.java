@@ -1,5 +1,7 @@
 package ru.getman.familytree.servlet.test;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.postgresql.ds.PGPoolingDataSource;
 
@@ -19,7 +21,7 @@ public class DbConnectionTest {
     private static String dbName;
     private static String user;
     private static String password;
-
+    private static final Logger logger = LogManager.getLogger(DbConnectionTest.class);
     //------------Methods-----------
     @Test
     public void testDbConnection() throws IOException, SQLException {
@@ -35,6 +37,7 @@ public class DbConnectionTest {
         ResultSet rs = callable.executeQuery("SELECT * FROM test");
         if (rs.next()) {
             System.out.println("Data base is available");
+            logger.info("Data base is available");
         }
     }
 
@@ -44,6 +47,7 @@ public class DbConnectionTest {
         if (propertiesInputStream != null) {
             prop.load(propertiesInputStream);
         } else {
+            logger.error("property file '" + propertyFileName + "' not found in the classpath");
             throw new FileNotFoundException("property file '" + propertyFileName + "' not found in the classpath");
         }
         return prop;

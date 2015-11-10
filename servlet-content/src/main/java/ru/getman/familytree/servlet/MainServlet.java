@@ -1,5 +1,7 @@
 package ru.getman.familytree.servlet;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import ru.getman.familytree.servlet.dao.DAOFactory;
 import ru.getman.familytree.servlet.dao.PersonDAO;
 import ru.getman.familytree.servlet.dao.PostgreSqlDaoFactory;
@@ -19,9 +21,10 @@ import java.sql.SQLException;
  */
 @WebServlet("/")
 public class MainServlet extends HttpServlet{
+    private static final Logger logger = LogManager.getLogger(MainServlet.class);
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
-            IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("name", "Getman");
         req.getRequestDispatcher("indexPage.jsp").forward(req, resp);
         System.out.println("Show main page");
@@ -39,14 +42,18 @@ public class MainServlet extends HttpServlet{
      * @param response HttpServletResponse - user browser response*/
     private void processClientRequest(HttpServletRequest request, HttpServletResponse response) {
         if (request.getQueryString() != null) {
-            System.out.println("Client data received, content length: " + request.getQueryString());
-            System.out.println("parameter1=" + request.getParameter("parameter1"));
+            if (logger.isDebugEnabled()) {
+                logger.debug("Client data received, content length: " + request.getQueryString());
+                logger.debug("parameter1=" + request.getParameter("parameter1"));
+            }
             DAOFactory daoFactory = new PostgreSqlDaoFactory();
             try {
                 Connection conn = daoFactory.getConnection();
                 PersonDAO personDao = daoFactory.getPersonDao(conn);
                 Person testPerson = personDao.getPerson(1);
-                System.out.println("test person received: " + testPerson.getName() + "/" + testPerson.getAge());
+                if (logger.isDebugEnabled()) {
+                    logger.debug("test person received: " + testPerson.getName() + "/" + testPerson.getAge());
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
