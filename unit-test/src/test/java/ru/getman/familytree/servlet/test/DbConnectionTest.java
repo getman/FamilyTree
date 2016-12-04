@@ -24,13 +24,7 @@ public class DbConnectionTest {
     private static final Logger logger = LogManager.getLogger(DbConnectionTest.class);
     //------------Methods-----------
     @Test
-    public void testDbConnection() throws IOException, SQLException {
-        //property resource stores a source data for testing - schedule templates and launch time parameters
-        Properties prop = loadProperties("db-test.properties");
-        host = prop.getProperty("host");
-        dbName = prop.getProperty("dbName");
-        user = prop.getProperty("user");
-        password = prop.getProperty("password");
+    public void testDbConnection() throws SQLException, IOException {
         DataSource ds = getPostgreDataSource();
         Connection connection = ds.getConnection();
         Statement callable = connection.createStatement();
@@ -53,7 +47,13 @@ public class DbConnectionTest {
         return prop;
     }
 
-    private static DataSource getPostgreDataSource() {
+    static DataSource getPostgreDataSource() throws IOException {
+        //property resource stores a source data for testing - schedule templates and launch time parameters
+        Properties prop = loadProperties("db-test.properties");
+        host = prop.getProperty("host");
+        dbName = prop.getProperty("dbName");
+        user = prop.getProperty("user");
+        password = prop.getProperty("password");
         PGPoolingDataSource source = new PGPoolingDataSource();
         source.setDataSourceName("A Data Source");
         source.setServerName(host);

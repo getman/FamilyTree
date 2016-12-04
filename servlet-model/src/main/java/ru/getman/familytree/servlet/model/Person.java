@@ -5,11 +5,17 @@ package ru.getman.familytree.servlet.model;
  * @since 7-04-14*/
 public class Person {
 	//---------Data members-----------
+    /**Person unique identifier*/
     private int id;
+    /**Person name*/
 	private String name;
+    /**Person age*/
 	private short age;
 	
 	//----------Methods---------
+    public Person(int id) {
+        this.id = id;
+    }
 
 	/**Returns person string representation*/
 	@Override

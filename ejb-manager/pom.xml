@@ -4,18 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
-    <artifactId>ejb-dao</artifactId>
+    <groupId>ru.aparfenov.familytree</groupId>
+    <artifactId>ejb-manager</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
         <dependency>
-            <groupId>ru.aparfenov.familytree</groupId>
-            <artifactId>util</artifactId>
+            <groupId>groupId</groupId>
+            <artifactId>ejb-dao</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>ru.aparfenov.familytree</groupId>
-            <artifactId>elements</artifactId>
+            <artifactId>util</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

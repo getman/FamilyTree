@@ -3,6 +3,9 @@ package ru.getman.familytree.servlet.dao;
 import ru.getman.familytree.servlet.model.Person;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 /**
@@ -19,11 +22,19 @@ public class PostgreSqlPersonDao implements PersonDAO{
 
     @Override
     public Person getPerson(int personId) {
+        Person foundPerson = null;
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM test");
+            if (resultSet.next()) {
+                foundPerson = new Person(resultSet.getInt("id"));
+                foundPerson.setName(resultSet.getString("name"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-        Person testPerson = new Person();
-        testPerson.setAge((short) 32);
-        testPerson.setName("Me");
-        return testPerson;
+        return foundPerson;
     }
 
     @Override
