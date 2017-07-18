@@ -8,17 +8,14 @@
         <artifactId>family-tree</artifactId>
         <version>1.0</version>
     </parent>
-    <groupId>ru.aparfenov.familytree</groupId>
-    <artifactId>ejb-manager</artifactId>
+
+    <groupId>ru.aparfenov.familytree.dao</groupId>
+    <artifactId>ejb-photo-dao</artifactId>
     <version>1.0</version>
     <packaging>ejb</packaging>
 
+
     <dependencies>
-        <dependency>
-            <groupId>ru.aparfenov.familytree</groupId>
-            <artifactId>util</artifactId>
-            <version>1.0</version>
-        </dependency>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
@@ -26,16 +23,25 @@
         </dependency>
         <dependency>
             <groupId>ru.aparfenov.familytree.dao</groupId>
-            <artifactId>ejb-person-dao</artifactId>
+            <artifactId>storage-dao</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>ru.aparfenov.familytree.dao</groupId>
-            <artifactId>ejb-photo-dao</artifactId>
+            <artifactId>ejb-smb-dao</artifactId>
             <version>1.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.4.1</version>
+        </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -64,6 +70,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>
