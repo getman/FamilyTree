@@ -39,12 +39,6 @@
             <version>1.0</version>
             <type>ejb</type>
         </dependency>
-        <!--<dependency>
-            <groupId>ru.aparfenov.familytree.dao</groupId>
-            <artifactId>ejb-postges-dao</artifactId>
-            <version>1.0</version>
-            <type>ejb</type>
-        </dependency>-->
         <dependency>
             <groupId>ru.aparfenov.familytree.dao</groupId>
             <artifactId>ejb-smb-dao</artifactId>

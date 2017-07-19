@@ -9,16 +9,5 @@
     <servlet-mapping>
         <servlet-name>MainServlet</servlet-name>
         <url-pattern>/family_tree</url-pattern>
-        <!--<url-pattern>/*</url-pattern>-->
     </servlet-mapping>
-    <!--<ejb-ref>
-        <ejb-ref-name>ElementMngr</ejb-ref-name>
-        <ejb-ref-type>Session</ejb-ref-type>
-        <remote>ru.aparfenov.familytree.manager.ElementManager</remote>
-    </ejb-ref>-->
-    <!--<ejb-local-ref>
-        <ejb-ref-name>PluginDataDAO</ejb-ref-name>
-        <ejb-ref-type>Session</ejb-ref-type>
-        <local>cz.literak.blog.j2ee.dao.IPluginDataDAO</local>
-    </ejb-local-ref>-->
 </web-app>

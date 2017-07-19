@@ -28,18 +28,6 @@ public class ElementDto {
 
     public Param getParam(String paramName) {
         return paramList.get(paramName);
-//        return new Param("hello", "world");
     }
 
-    /*@Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (Map.Entry nextEntry: paramList.entrySet()) {
-            sb.append(nextEntry.getKey());
-            sb.append(":");
-            sb.append(nextEntry.getValue());
-            sb.append("/");
-        }
-        return sb.toString();
-    }*/
 }

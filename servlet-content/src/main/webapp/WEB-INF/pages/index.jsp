@@ -75,35 +75,6 @@ persons:
         <input type="hidden" name="action" value="add_person"/>
         <input type="submit" value="+"/>
     </form>
-
-    <%--<form method="POST" action="book_store">
-        <p>
-            <label for="item">Add review, book id:</label>
-            <input id="book_id" type="text" name="book_id"/>
-            <label for="item">review text:</label>
-            <input id="review_text" type="text" name="review_text"/>
-            <label for="item">author id:</label>
-            <input id="author_id" type="text" name="author_id"/>
-
-            <input type="hidden" name="action" value="add"/>
-            <input type="submit" value="add"/>
-        </p>
-    </form>
-
-    <form action="http://foo.com" method="post">
-        <div>
-            <label for="say">What greeting do you want to say?</label>
-            <input name="say" id="say" value="Hi">
-        </div>
-        <div>
-            <label for="to">Who do you want to say it to?</label>
-            <input name="to" value="Mom">
-        </div>
-        <div>
-            <button>Send my greetings</button>
-        </div>
-    </form>--%>
-
 </body>
 </html>
 

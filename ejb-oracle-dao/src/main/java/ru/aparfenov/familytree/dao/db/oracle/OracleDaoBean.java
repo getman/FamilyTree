@@ -16,7 +16,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+/** Отвечает за хранение элементов в БД Oracle
  * Created by ArtemParfenov on 27.05.2017.
  */
 @Stateless

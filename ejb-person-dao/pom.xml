@@ -30,11 +30,6 @@
             <artifactId>storage-dao</artifactId>
             <version>1.0</version>
         </dependency>
-        <!--<dependency>
-            <groupId>ru.aparfenov.familytree.dao</groupId>
-            <artifactId>ejb-postges-dao</artifactId>
-            <version>1.0</version>
-        </dependency>-->
         <dependency>
             <groupId>ru.aparfenov.familytree.dao</groupId>
             <artifactId>ejb-oracle-dao</artifactId>
